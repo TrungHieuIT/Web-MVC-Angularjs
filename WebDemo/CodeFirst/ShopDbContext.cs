@@ -19,6 +19,7 @@ namespace Shop.Data
         public DbSet<Customer> Customers { set; get; }
         public DbSet<Order> Orders { set; get; }
         public DbSet<OrderDetail> OrderDetails { set; get; }
+        public DbSet<AutoIdOrder> AutoIdOrder { get; set; }
         public static ShopDbContext Create()
         {
             return new ShopDbContext();

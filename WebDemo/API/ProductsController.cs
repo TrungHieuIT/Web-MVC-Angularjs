@@ -4,10 +4,6 @@ using System.Data;
 using System.Web.Http;
 using System.Linq;
 using System.Net;
-
-
-using System.Web.Http.Description;
-
 using WebDemo.Models;
 using WebDemo.ViewModels;
 using System.Net.Http;
@@ -47,7 +43,7 @@ namespace WebDemo.Controllers
             return Ok(data);
         }
 
-        [HttpPut]
+        [HttpGet]
         // GET: api/Products/5
         public ProductViewModel GetProduct(int id)
         {
@@ -99,7 +95,7 @@ namespace WebDemo.Controllers
         }
 
         // POST: api/Products
-        [ResponseType(typeof(ProductViewModel))]
+    
         public IHttpActionResult AddProduct(ProductViewModel product)
         {
             if (!ModelState.IsValid)
@@ -117,6 +113,7 @@ namespace WebDemo.Controllers
                 Invetory = product.Invetory,
                 OriginalPrice = product.OriginalPrice,
                 CategoryID = product.CategoryID,
+                CategoryName =product.CategoryName,
                 Status = product.Status,
             });
             db.SaveChanges();
@@ -125,7 +122,7 @@ namespace WebDemo.Controllers
         }
 
         // DELETE: api/Products/5
-        [ResponseType(typeof(ProductViewModel))]
+   
         public IHttpActionResult DeleteProduct(int id)
         {
             if (id <= 0)

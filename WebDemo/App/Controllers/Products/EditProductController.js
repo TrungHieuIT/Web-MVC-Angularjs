@@ -9,11 +9,21 @@ function EditProductController($http, $stateParams ,$state) {
     vm.product = {}
     vm.listProduct = listProduct;
     vm.createProduct = createProduct;
+    vm.productCategory = {}
+
+    $http({
+        method: 'GET',
+        url: '/api/ProductCategories',
+    }).then(function successCallBack(response) {
+        vm.productCategory = response.data;
+    });
 
     if (vm.Id) {
+     
         getProductId();
     }
-    function getProductId () {
+    function getProductId() {
+        
         $http({
             method: 'GET',
             url :'/api/Products/' + vm.Id,

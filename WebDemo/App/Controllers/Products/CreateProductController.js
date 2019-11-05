@@ -8,18 +8,29 @@ function CreateProductController($http ,$state) {
   
     vm.createProduct = createProduct;
     vm.listProduct = listProduct;
+    vm.productCategory = {};
     vm.item = {};
-    function createProduct () {
+   
+  
+    $http({
+        method: 'GET',
+        url: '/api/ProductCategories',
+    }).then(function successCallBack(response) {
+        vm.productCategory = response.data;
+    });
+
+    function createProduct() {
+
         $http({
             method: 'POST',
             url: '/api/Products/',
             data : vm.item,
-        }).then(function successCallBack(response) {
-           
+        }).then(function successCallBack(response) {           
             alert("Thêm thành công !");
         }, function errorCallBack() {
                 alert("Thêm thất bại !");
         });
+     
     }
     function reset () {
         vm.item = null;
@@ -28,4 +39,5 @@ function CreateProductController($http ,$state) {
     function listProduct() {
         $state.go("app.allproduct");
     }
+ 
 } 

@@ -6,7 +6,7 @@ function ProductController($http, NgTableParams, $state ) {
     var vm = this;
     vm.deleteProduct = deleteProduct;
     vm.searchProduct = searchProduct; 
-    vm.ProductViewModel = [{}];
+    vm.ProductViewModel = {};
     vm.createProduct = createProduct;
     vm.editProduct = editProduct;
    
@@ -50,6 +50,7 @@ function ProductController($http, NgTableParams, $state ) {
             alert("Bạn đã xóa thành công !");
             var index = vm.ProductViewModel.indexOf(item);
             vm.ProductViewModel.splice(index, 1);
+            vm.tableParams = new NgTableParams({}, { dataset: vm.ProductViewModel });
         }, function errorCallBack() {
             alert("Xoá không thành công !")
         })

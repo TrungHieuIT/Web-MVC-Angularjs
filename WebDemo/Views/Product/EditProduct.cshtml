@@ -29,25 +29,34 @@
         <div class="col-sm-12 form-group">
             <label class="col-sm-3 col-form-lable">CategoryID</label>
             <div class="col-sm-9">
-                <input class="form-control" type="number" ng-model="vm.product.CategoryID" />
+                <select class="form-group" kendo-combo-box
+                        k-placeholder="'Select Category'"
+                        k-data-text-field="'Name'"
+                        k-data-value-field="'ID'"
+                        k-filter="'contains'"
+                        k-auto-bind="false"
+                        k-data-source="vm.productCategory"
+                        ng-model="vm.product.CategoryID"
+                        style="width: 26.5%">
+                </select>
             </div>
         </div>
         <div class="col-sm-12 form-group">
             <label class="col-sm-3 col-form-lable">Price</label>
             <div class="col-sm-9">
-                <input kendo-numeric-text-box style="width:300px" type="number" format:"{:n0}" ng-model="vm.product.Price" />
+                <input class="form-group" kendo-numeric-text-box style="width:300px" type="number" format:"{:n0}" ng-model="vm.product.Price" />
             </div>
         </div>
         <div class="col-sm-12 form-group">
             <label class="col-sm-3 col-form-lable">Invetory</label>
             <div class="col-sm-9">
-                <input kendo-numeric-text-box style="width:300px" type="text" ng-model="vm.product.Invetory" />
+                <input class="form-group" kendo-numeric-text-box style="width:300px" type="text" ng-model="vm.product.Invetory" />
             </div>
         </div>
         <div class="col-sm-12 form-group">
             <label class="col-sm-3 col-form-lable">OriginalPrice</label>
             <div class="col-sm-9">
-                <input kendo-numeric-text-box style="width:300px" type="number" format:"{:n0}" ng-model="vm.product.OriginalPrice" />
+                <input class="form-group" kendo-numeric-text-box style="width:300px" type="number" format:"{:n0}" ng-model="vm.product.OriginalPrice" />
             </div>
         </div>
         <div class="col-sm-12 form-group">

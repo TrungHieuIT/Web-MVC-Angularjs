@@ -7,48 +7,45 @@
 <h2>Create Customer</h2>
 
 <div ng-controller="CreateCustomerController as vm">
-    <div>
-        <div class="btn btn-group col-lg-4" >
-            <button type="button" class="btn btn-success btn-sm" ng-click="vm.addCustomer()">Save</button>
+    <form ng-submit="vm.addCustomer()">
+        <div style="margin-bottom:20px">
+            <button type="submit" class="btn btn-success btn-sm" >Save</button>
             <button type="button" class="btn btn-default btn-sm" ng-click="vm.back()">Back</button>
         </div>
-    </div>
-    
-    
-    <div class="shell-form">
-        <div class="form-center">
-            <div class="form-group">
-                <label class="col-sm-3 col-form-lable">Name</label>
-                <div class="col-sm-9">
-                    <input class="form-control" type="text" ng-model="vm.item.CustomerName" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 col-form-lable">Phone</label>
-                <div class="col-sm-9">
-                    <input class="form-control" type="text" ng-model="vm.item.Phone" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 col-form-lable">Email</label>
-                <div class="col-sm-9">
-                    <input class="form-control" type="text" ng-model="vm.item.Email" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 col-form-lable">Address</label>
-                <div class="col-sm-9">
-                    <input class="form-control" type="text" ng-model="vm.item.Address" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 col-form-lable">Country</label>
-                <div class="col-sm-9">
-                    <input class="form-control" type="text" ng-model="vm.item.Country" />
-                </div>
-            </div>
 
+
+        <div>
+            <label class="col-sm-3 col-form-lable">Customer Name</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.CustomerName" />
+            </div>
+        </div>   <div>
+            <label class="col-sm-3 col-form-lable">Phone</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.Phone" />
+            </div>
         </div>
-    </div>
-    
+        <div>
+            <label class="col-sm-3 col-form-lable">Email</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.Email" />
+            </div>
+        </div>
+        <div>
+            <label class="col-sm-3 col-form-lable">Address</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.Address" />
+            </div>
+        </div>
+        <div>
+            <label class="col-sm-3 col-form-lable">Country</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.Country" />
+            </div>
+        </div>
+    </form>
+       
+
+   
+
 </div>
