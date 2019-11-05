@@ -1,0 +1,154 @@
+﻿<!-- light-blue - v4.0.1 - 2018-10-31 -->
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>TH SHOP</title>
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="~/Scripts/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Scripts/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/Scripts/styles/kendo.default.mobile.min.css" rel="stylesheet" />
+    <link href="~/Content/ng-table.css" rel="stylesheet" />
+    <link href="~/Templates/css/application.css" rel="stylesheet">
+    <link rel="shortcut icon" href="~/Templates/img/favicon.png">
+    <link href="~/Scripts/css/Customer.css" rel="stylesheet" />
+    <link href="~/Scripts/css/Order.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="appCtrl">
+        <div class="logo">
+            <h3><a ui-sref="app.dashboard"> <strong>TH</strong> SHOP</a></h3>
+        </div>
+        <nav id="sidebar" class="sidebar nav-collapse collapse">
+            <ul id="side-nav" class="side-nav">
+                <li class="active">
+                    <a ui-sref="app.dashboard"><i class="fa fa-home"></i> <span class="name">Dash board</span></a>
+                </li>
+                <li class="">
+                    <a ui-sref="app.allproduct"><i class="fa fa-apple"></i> Product</a>
+                </li>
+
+                <li class="">
+                    <a ui-sref="app.listcustomer"><i class="fa fa-users"></i> Customer</a>
+                </li>
+
+                <li class="">
+                    <a ui-sref="app.listorder"><i class="fa fa-shopping-cart"></i> Order</a>
+                </li>
+
+                <li class="panel ">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse"
+                       data-parent="#side-nav" href="#elements-collapse"><i class="fa fa-magic"></i> <span class="name">Elements</span></a>
+                    <ul id="elements-collapse" class="panel-collapse collapse ">
+                        <li class=""><a href="#">Charts</a></li>
+                        <li class=""><a href="#">Icons</a></li>
+                        <li class=""><a href="#" data-no-pjax>Maps</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </nav>
+        <div class="wrap col-lg-10">
+            <header class="page-header">
+                <div class="navbar">
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="visible-phone-landscape">
+                            <a href="#" id="search-toggle">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="Messages" id="messages"
+                               class="dropdown-toggle"
+                               data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-comment"></i>
+                            </a>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" title="8 support tickets"
+                               class="dropdown-toggle"
+                               data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-globe"></i>
+                                <span class="count">8</span>
+                            </a>
+
+                        </li>
+                        <li class="divider"></li>
+                        <li class="hidden-xs">
+                            <a href="#" id="settings"
+                               title="Settings"
+                               data-toggle="popover"
+                               data-placement="bottom">
+                                <i class="glyphicon glyphicon-cog"></i>
+                            </a>
+                        </li>
+                        <li class="hidden-xs dropdown">
+                            <a href="#" title="Account" id="account"
+                               class="dropdown-toggle"
+                               data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </a>
+
+                        </li>
+                        <li class="visible-xs">
+                            <a href="#"
+                               class="btn-navbar"
+                               data-toggle="collapse"
+                               data-target=".sidebar"
+                               title="">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <form id="search-form" class="navbar-form pull-right" role="search">
+                        <input type="search" class="form-control search-query" placeholder="Search...">
+                    </form>
+
+                </div>
+            </header>
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+            <div class="loader-wrap hiding hide">
+                <i class="fa fa-circle-o-notch fa-spin"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- common libraries. required for every page-->
+    <script src="~/Templates/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.23/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+    <script src="~/Templates/lib/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.3.917/js/kendo.all.min.js"></script>
+
+
+    <script src="~/App/app.js"></script>
+    <script src="~/App/Controllers/Products/ProductsController.js"></script>
+    <script src="~/App/Controllers/Products/CreateProductController.js"></script>
+    <script src="~/App/Controllers/Products/EditProductController.js"></script>
+    <script src="~/App/Controllers/Orders/ListOrderController.js"></script>
+    <script src="~/App/Controllers/Orders/OrderController.js"></script>
+
+    <script src="~/App/Controllers/Customers/ListCustomerController.js"></script>
+    <script src="~/App/Controllers/Customers/CreateCustomerController.js"></script>
+    <script src="~/App/Controllers/Customers/EditCustomerController.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "CreateProduct";
+    Layout = null;
+}
+
+<h2>Create Product</h2>
+
+<div ng-controller="CreateProductController as vm">
+    <form ng-submit="vm.createProduct()">
+        <button type="submit" value="Submit" class="btn btn-success btn-sm"  >Submit</button>
+        <button type="button" class="btn btn-success btn-sm" ng-click="vm.reset()">Reset</button>
+        <button type="button" class="btn btn-success btn-sm" ng-click="vm.listProduct()">Back</button>
+        <br/>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-lable">Name Product</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-lable">Alias</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.Alias" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-lable">CategoryID</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" ng-model="vm.item.CategoryID" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-lable">Price</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" ng-model="vm.item.Price" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-lable">Invetory</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.item.Invetory" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-lable">OriginalPrice</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" ng-model="vm.item.OriginalPrice" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-lable">Status</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" ng-model="vm.item.Status" />
+            </div>
+        </div>
+
+    </form>
+</div>

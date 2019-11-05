@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+<h2>Customer</h2>
+<br/>
+<div ng-controller="ListCustomerController as vm">
+    <div>
+        <button type="button" class="btn btn-success btn-sm create" ng-click="vm.createCustomer()">Create Customer</button>
+        <form class="form form-group-sm" >
+            <input
+                   ng-keydown="$event.keyCode === 13 && vm.searchCustomer(search)"
+                   type="search" name="search" placeholder="Search Customer...." 
+                   ng-model="search"
+                   class="form-control search-query col-sm-4"
+                   />
+            <button class="btn btn-default"
+                    style="margin:-1px 0 0 3px"
+                    ng-click="vm.searchCustomer(search)">
+                <i class="fa fa-search"></i>
+            </button>
+           
+        </form>
+    </div>
+    <table ng-table="vm.tableParams"
+           class="table col-lg-8 table-condensed table-hover table-bordered"> 
+        <tbody>
+            <tr ng-repeat=" item in $data ">
+                
+                <td title="'Name'" sortable="'Name'">{{item.CustomerName}}</td>
+                <td title="'Phone'">{{item.Phone}}</td>
+                <td title="'Email'">{{item.Email}}</td>
+                <td title="'Address'">{{item.Address}}</td>
+                <td title="'Country'">{{item.Country}}</td>
+                <td title="'Action'">
+                    <button class="btn btn-success btn-sm" ng-click="vm.editCustomer(item)">Edit</button>
+                    <button class="btn btn-danger btn-sm" ng-click="vm.deleteCustomer(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "EditProduct";
+    Layout =null;
+}
+
+<h2>Edit Product</h2>
+
+<div ng-controller="EditProductController as vm">
+   
+    <form ng-submit="vm.updateProduct()">
+        <button class="btn btn-success btn-sm" ng-click="vm.createProduct()">Create Product</button>
+        <input type="submit" value="Update" class="btn btn-success btn-sm" />
+        <input type="button" value="Back" class="btn btn-success btn-sm" ng-click="vm.listProduct()" />
+        <br />
+
+        <div class="col-sm-12 form-group">
+            <label class="col-sm-3 col-form-lable">Name Product</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.product.Name" />
+            </div>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label class="col-sm-3 col-form-lable">Alias</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="vm.product.Alias" />
+            </div>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label class="col-sm-3 col-form-lable">CategoryID</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" ng-model="vm.product.CategoryID" />
+            </div>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label class="col-sm-3 col-form-lable">Price</label>
+            <div class="col-sm-9">
+                <input kendo-numeric-text-box style="width:300px" type="number" format:"{:n0}" ng-model="vm.product.Price" />
+            </div>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label class="col-sm-3 col-form-lable">Invetory</label>
+            <div class="col-sm-9">
+                <input kendo-numeric-text-box style="width:300px" type="text" ng-model="vm.product.Invetory" />
+            </div>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label class="col-sm-3 col-form-lable">OriginalPrice</label>
+            <div class="col-sm-9">
+                <input kendo-numeric-text-box style="width:300px" type="number" format:"{:n0}" ng-model="vm.product.OriginalPrice" />
+            </div>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label class="col-sm-3 col-form-lable">Status</label>
+            <div class="col-sm-9">
+                <input class="form-control" string-to-number ng-model="vm.product.Status" />
+            </div>
+        </div>
+       
+    </form>
+
+    <br />
+</div>

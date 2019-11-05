@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "AllProduct";
+    Layout = null;
+}
+
+@*<script type="text/javascript">
+    var sortingOrder = 'Name';
+</script>*@
+<h2>List Product</h2>
+
+<br />
+
+<div class="col-sm-12" ng-controller="ProductController as vm">
+
+    <button class="btn btn-success btn-sm create " type="button" ng-click="vm.createProduct()">Create Product</button>
+        <br />
+        <form class="form form-group-sm">
+            <input ng-keydown="$event.keyCode === 13 && vm.searchProduct(search)"
+                   class="form-control search-query col-sm-4 " type="search"
+                   name="search" placeholder="Search Product.."
+                   ng-model="search" />
+                   
+            <button class="btn btn-default" style="margin:-1px 0 0 3px" ng-click="vm.searchProduct(search)">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+  
+
+
+
+    @*<table ng-table="vm.tableParams" class="table" show-filter="false">
+            <tr ng-repeat="item in $data">
+                <td title="'Name'" filter="{ name: 'text'}" sortable="'Name'">
+                    {{item.Name}}
+                </td>
+                <td title="'Age'" filter="{ age: 'number'}" sortable="'Price'">
+                    {{item.Price}}
+                </td>
+            </tr>
+        </table>*@
+
+    <table ng-table="vm.tableParams" show-filter="true"
+           class="table col-lg-12 table-condensed table-hover table-bordered  ">
+        @*<thead>
+            <tr>
+
+                <td title="'Name'" filter="{Name:'text'}" sortable="'Name'">Name</td>
+                <td>Category Name</td>
+                <td>Price</td>
+                <td>Invetory</td>
+                <td>OriginalPrice</td>
+                <td>Action</td>
+            </tr>
+        </thead>*@
+        <tbody>
+            <tr ng-repeat=" item in $data ">
+
+                <td title="'Name'" filter="{Name:'text'}" sortable="'Name'">{{item.Name}}</td>
+                <td title="'Category Name'" filter="{CategoryName:'text'}" sortable="'CategoryName'" fi>{{item.CategoryName}}</td>
+                <td title="'Price'" sortable="'Price'">{{item.Price | number :0}}  VNĐ</td>
+                <td title="'Invetory'"  sortable="'Invetory'">{{item.Invetory}}</td>
+                <td title="'OriginalPrice'" sortable="'OriginalPrice'">{{item.OriginalPrice}}  VNĐ</td>
+                <td title="'Action'">
+                    <button class="btn btn-success btn-sm" ng-click="vm.editProduct(item)">Edit</button>
+                    <button class="btn btn-danger btn-sm" ng-click="vm.deleteProduct(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

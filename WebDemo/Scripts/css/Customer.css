@@ -1,0 +1,19 @@
+﻿.form-control {
+    margin-bottom: 10px;
+    width: 300px;
+
+}
+.form-shell {
+    margin:0 auto;
+    max-width: 1000px;
+}
+.btn {
+    margin:5px;
+    border-radius :5px; 
+}
+.btn-default {
+    background-color:#87a3ef;
+}
+.create {
+    margin-bottom: 20px;
+}

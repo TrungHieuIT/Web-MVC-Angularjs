@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "ProductCategory";
+     Layout = null;
+}
+
+<h1>Product Category</h1>
+<br />
+<div ng-controller="ProductCategoryController">
+
+    <form ng-submit="createProductCategory()">
+        <h3>Create Product Category</h3>
+        <br />
+        <div class="form-group">
+            <label class="col-sm-3 col-form-label">Name Product Category :</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="item.Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-label">Alias</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" ng-model="item.Alias" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 col-form-label">Status</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" ng-model="item.Status" placeholder="1 = True , 0 = False" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <input type="submit" value="Submit" class="btn btn-success btn-sm" ng-show="submit" />
+                <input type="button" value="Update" class="btn btn-success btn-sm" ng-click="updateProductCategory()" ng-show="update" />
+                <input type="button" value="Cancel" class="btn btn-success btn-sm" ng-click="cancelUpdate()" ng-show="cancel" />
+            </div>
+        </div>
+    </form>
+    <br />
+    <h4>List Product Category </h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td scope="col">ID</td>
+                <td scope="col">Name</td>
+                <td scope="col">Alias</td>
+                <td scope="col">Status</td>
+                <td scope="col">Action</td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr ng-repeat="item in ProductCategory">
+                <td scope="row">{{item.ID}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Alias}}</td>
+                <td>{{item.Status}}</td>
+                <td>
+                    <button class="btn btn-success btn-sm" ng-click="editProductCategory(item)">Edit</button>
+                    <button class="btn btn-danger btn-sm" ng-click="deleteProductCategory(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

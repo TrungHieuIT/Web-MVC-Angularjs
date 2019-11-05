@@ -1,0 +1,12 @@
+﻿
+.table tbody tr:hover {
+    background-color: #97b8fb;
+}
+.anyClass{
+    height:600px;
+    width:100%;
+    overflow-y:scroll;
+}
+.ng-table-header {
+    text-align:left;
+}
